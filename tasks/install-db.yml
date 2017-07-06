@@ -1,0 +1,12 @@
+---
+- name: "Installing the postgresql database"
+  include: "postgresql.yml"
+  when: database_type_long == "postgresql"
+  tags:
+    - always
+
+- name: "Installing the mysql database"
+  include: "mysql.yml"
+  when: database_type_long == "mysql"
+  tags:
+    - always
